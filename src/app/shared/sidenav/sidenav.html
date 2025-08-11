@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-4">
   <h1 class="text-[#111418] text-base font-medium leading-normal">
-    Hotel Manager
+    Reservas Departamentos Arrayanes
   </h1>
   <div class="flex flex-col gap-2">
     <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f0f2f5]">
@@ -22,7 +22,11 @@
           ></path>
         </svg>
       </div>
-      <p class="text-[#111418] text-sm font-medium leading-normal">Dashboard</p>
+      <a
+        [routerLink]="['/dashboard']"
+        class="text-[#111418] text-sm font-medium leading-normal"
+        >Dashboard</a
+      >
     </div>
     <div class="flex items-center gap-3 px-3 py-2">
       <div
@@ -43,52 +47,14 @@
           ></path>
         </svg>
       </div>
-      <p class="text-[#111418] text-sm font-medium leading-normal">
-        Reservations
-      </p>
-    </div>
-    <div class="flex items-center gap-3 px-3 py-2">
-      <div
-        class="text-[#111418]"
-        data-icon="Users"
-        data-size="24px"
-        data-weight="regular"
+      <a
+        [routerLink]="['/reservations']"
+        class="text-[#111418] text-sm font-medium leading-normal"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24px"
-          height="24px"
-          fill="currentColor"
-          viewBox="0 0 256 256"
-        >
-          <path
-            d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
-          ></path>
-        </svg>
-      </div>
-      <p class="text-[#111418] text-sm font-medium leading-normal">Guests</p>
+        Reservas
+      </a>
     </div>
-    <div class="flex items-center gap-3 px-3 py-2">
-      <div
-        class="text-[#111418]"
-        data-icon="Bed"
-        data-size="24px"
-        data-weight="regular"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24px"
-          height="24px"
-          fill="currentColor"
-          viewBox="0 0 256 256"
-        >
-          <path
-            d="M208,72H24V48A8,8,0,0,0,8,48V208a8,8,0,0,0,16,0V176H232v32a8,8,0,0,0,16,0V112A40,40,0,0,0,208,72ZM24,88H96v72H24Zm88,72V88h96a24,24,0,0,1,24,24v48Z"
-          ></path>
-        </svg>
-      </div>
-      <p class="text-[#111418] text-sm font-medium leading-normal">Rooms</p>
-    </div>
+
     <div class="flex items-center gap-3 px-3 py-2">
       <div
         class="text-[#111418]"
@@ -108,7 +74,11 @@
           ></path>
         </svg>
       </div>
-      <p class="text-[#111418] text-sm font-medium leading-normal">Reports</p>
+      <a
+        [routerLink]="['/reports']"
+        class="text-[#111418] text-sm font-medium leading-normal"
+        >Reports</a
+      >
     </div>
     <div class="flex items-center gap-3 px-3 py-2">
       <div
@@ -129,7 +99,11 @@
           ></path>
         </svg>
       </div>
-      <p class="text-[#111418] text-sm font-medium leading-normal">Settings</p>
+      <a
+        [routerLink]="['/settings']"
+        class="text-[#111418] text-sm font-medium leading-normal"
+        >Settings</a
+      >
     </div>
   </div>
 </div>

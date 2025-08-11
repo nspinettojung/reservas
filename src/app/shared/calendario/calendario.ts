@@ -75,19 +75,19 @@ export class Calendario {
   seleccionarDia(mes: number, ano: number, dia: number) {
     const fecha = new Date(ano, mes, dia);
 
+    // Si haces click en la primera fecha seleccionada
+    if (this.seleccion[0] && fecha.getTime() === this.seleccion[0].getTime()) {
+      // Si hay segunda fecha, la segunda pasa a ser la única seleccionada
+      if (this.seleccion[1]) {
+        this.seleccion = [this.seleccion[1], null];
+      } else {
+        this.seleccion[0] = null;
+      }
+      return;
+    }
     // Si haces click en la segunda fecha seleccionada, solo deselecciona la segunda
     if (this.seleccion[1] && fecha.getTime() === this.seleccion[1].getTime()) {
       this.seleccion[1] = null;
-      return;
-    }
-
-    // Si haces click en la primera fecha seleccionada y no hay segunda, limpia todo
-    if (
-      this.seleccion[0] &&
-      !this.seleccion[1] &&
-      fecha.getTime() === this.seleccion[0].getTime()
-    ) {
-      this.limpiarSeleccion();
       return;
     }
 

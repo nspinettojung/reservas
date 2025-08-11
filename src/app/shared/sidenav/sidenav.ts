@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'ara-sidenav',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './sidenav.html',
-  styleUrl: './sidenav.scss'
+  styleUrl: './sidenav.scss',
 })
-export class Sidenav {
-
-}
+export class Sidenav {}
