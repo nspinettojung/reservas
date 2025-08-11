@@ -1,0 +1,70 @@
+<div class="px-4 py-3 @container">
+  <div class="flex overflow-hidden rounded-lg border border-[#dbe0e6] bg-white">
+    <table class="flex-1">
+      <thead>
+        <tr class="bg-white">
+          @for (column of columns; track $index) {
+          <th
+            class="table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-120 px-4 py-3 text-left text-[#111418] w-[400px] text-sm font-medium leading-normal"
+          >
+            {{ column }}
+          </th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (depto of listadepto; track $index) {
+        <tr class="border-t border-t-[#dbe0e6]">
+          <td
+            class="table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal"
+          >
+            {{ depto.departamento }}
+          </td>
+          <td
+            class="table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-240 h-[72px] px-4 py-2 w-[400px] text-[#60758a] text-sm font-normal leading-normal"
+          >
+            {{ depto.cantidadPersonas }}
+          </td>
+          <td
+            class="table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-360 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal"
+          >
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#f0f2f5] text-[#111418] text-sm font-medium leading-normal w-full"
+            >
+              <span class="truncate">{{ depto.estado }}</span>
+            </button>
+          </td>
+          <td
+            class="table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-480 h-[72px] px-4 py-2 w-60 text-[#60758a] text-sm font-bold leading-normal tracking-[0.015em]"
+          >
+            {{ depto.precioPorNoche }}
+          </td>
+        </tr>
+        }
+      
+      </tbody>
+    </table>
+  </div>
+  <style>
+    @container (max-width:120px) {
+      .table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-120 {
+        display: none;
+      }
+    }
+    @container (max-width:240px) {
+      .table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-240 {
+        display: none;
+      }
+    }
+    @container (max-width:360px) {
+      .table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-360 {
+        display: none;
+      }
+    }
+    @container (max-width:480px) {
+      .table-91697a00-a702-4df2-8b7e-a3791ef5f4bc-column-480 {
+        display: none;
+      }
+    }
+  </style>
+</div>
