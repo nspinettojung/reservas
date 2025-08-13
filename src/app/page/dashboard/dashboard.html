@@ -2,34 +2,35 @@
   class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
   style="font-family: 'Work Sans', 'Noto Sans', sans-serif"
 >
-  <div class="layout-container flex h-full grow flex-col">
+  <div class="layout-container flex h-full grow">
     <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-      <div class="layout-content-container flex flex-col w-50">
-        <div class="flex h-full h-dvh flex-col justify-between bg-white p-4">
+      <div class="layout-content-container flex flex-col w-80">
+        <div class="flex h-full flex-col justify-between bg-white p-4">
           <ara-sidenav></ara-sidenav>
         </div>
       </div>
-      <div class="layout-content-container flex flex-col flex-1">
-        <div class="flex flex-wrap justify-between gap-3 p-4">
+      <div class="layout-content-container flex flex-wrap items-start w-full">
+        <div class="layout-content-container grid grid-cols-1 w-full">
+          <div class="flex flex-wrap justify-between gap-3 p-4">
+            <h2
+              class="text-[#111418] tracking-light text-[32px] font-bold leading-tight"
+            >
+              Dashboard
+            </h2>
+          </div>
           <h2
-            class="text-[#111418] tracking-light text-[32px] font-bold leading-tight min-w-72"
+            class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
           >
-            Dashboard
+            Reservas
           </h2>
+          <ara-lista-cliente></ara-lista-cliente>
+          <h2
+            class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
+          >
+            Estado Departamentos
+          </h2>
+          <ara-lista-depto></ara-lista-depto>
         </div>
-        <h2
-          class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
-        >
-          Reservas
-        </h2>
-
-        <ara-lista-cliente></ara-lista-cliente>
-        <h2
-          class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
-        >
-          Estado Departamentos
-        </h2>
-        <ara-lista-depto></ara-lista-depto>
       </div>
     </div>
   </div>
