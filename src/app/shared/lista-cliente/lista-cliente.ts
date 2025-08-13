@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Icliente } from '../../core/icliente';
 
 @Component({
   selector: 'ara-lista-cliente',
@@ -7,27 +8,49 @@ import { Component } from '@angular/core';
   styleUrl: './lista-cliente.scss',
 })
 export class ListaCliente {
-  columns = ['Huésped', 'Departamento', 'Check-in', 'Check-out', 'Estado'];
-  listaReservas = [
+  columns: string[] = [
+    'Huésped',
+    'Departamento',
+    'Teléfono',
+    'CUIT',
+    'Cantidad de Personas',
+    'Check-in',
+    'Check-out',
+    'Solicitudes Especiales',
+    'Estado',
+  ];
+  listaReservas: Icliente[] = [
     {
       huesped: 'Nicolas jung',
       depto: 'planta baja',
-      checkin: '2023-10-01',
-      checkout: '2023-10-05',
+      telefono: '123456789',
+      cuit: '20-12345678-9',
+      cantidadPersonas: 2,
+      checkin: new Date().toLocaleDateString(),
+      checkout: new Date().toLocaleDateString(),
+      solicitudesEspeciales: 'Cama extra',
       estado: 'confirmada',
     },
     {
       huesped: 'Maria Lopez',
       depto: 'primer piso',
-      checkin: '2023-10-03',
-      checkout: '2023-10-07',
+      telefono: '987654321',
+      cuit: '20-98765432-1',
+      cantidadPersonas: 1,
+      checkin: new Date().toLocaleDateString(),
+      checkout: new Date().toLocaleDateString(),
+      solicitudesEspeciales: 'Ninguna',
       estado: 'pendiente',
     },
     {
       huesped: 'Carlos Perez',
       depto: 'segundo piso',
-      checkin: '2023-10-02',
-      checkout: '2023-10-06',
+      telefono: '456789123',
+      cuit: '20-45678912-3',
+      cantidadPersonas: 3,
+      checkin: new Date().toLocaleDateString(),
+      checkout: new Date().toLocaleDateString(),
+      solicitudesEspeciales: 'Cama adicional',
       estado: 'cancelada',
     },
   ];

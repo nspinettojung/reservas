@@ -1,6 +1,6 @@
-<div class="flex flex-wrap items-center justify-center gap-6 p-4">
+<div class="flex flex-wrap items-center  gap-6 p-4">
   <!-- Calendario Mes Actual -->
-  <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+  <div class="flex max-w-full flex-1 flex-col gap-0.5">
     <div class="flex items-center p-1 justify-between">
       <button (click)="mesAnterior()" class="p-2 rounded hover:bg-gray-200">
         <!-- SVG anterior -->
@@ -21,7 +21,7 @@
       </span>
       <div class="w-8"></div>
     </div>
-    <div class="grid grid-cols-7 min-h-[330px]">
+    <div class="grid grid-cols-7 min-h-full">
       @for (d of ['L','M','M','J','V','S','D']; track $index) {
       <div class="text-center font-bold text-gray-700 py-2">{{ d }}</div>
       } @for (item of [].constructor(getPrimerDiaSemana(mesActual, anoActual));
@@ -42,7 +42,7 @@
   </div>
 
   <!-- Calendario Mes Siguiente -->
-  <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+  <div class="flex max-w-full flex-1 flex-col gap-0.5">
     <div class="flex items-center p-1 justify-between">
       <div class="w-8"></div>
       <span class="text-lg font-bold capitalize flex-1 text-center">
@@ -63,7 +63,7 @@
         </svg>
       </button>
     </div>
-    <div class="grid grid-cols-7 min-h-[330px]">
+    <div class="grid grid-cols-7 min-h-full">
       @for (d of ['L','M','M','J','V','S','D']; track $index) {
       <div class="text-center font-bold text-gray-700 py-2">{{ d }}</div>
       } @for (item of [].constructor(getPrimerDiaSemana(mesSiguiente,

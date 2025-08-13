@@ -4,27 +4,25 @@
 >
   <div class="layout-container flex h-full grow flex-col">
     <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-      <div class="layout-content-container flex flex-col w-80">
-        <div
-          class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4"
-        >
+      <div class="layout-content-container flex flex-col w-50">
+        <div class="flex h-full h-dvh flex-col justify-between bg-white p-4">
           <ara-sidenav></ara-sidenav>
         </div>
       </div>
-      <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+      <div class="layout-content-container flex flex-col flex-1">
         <div class="flex flex-wrap justify-between gap-3 p-4">
-          <p
+          <h2
             class="text-[#111418] tracking-light text-[32px] font-bold leading-tight min-w-72"
           >
             Dashboard
-          </p>
+          </h2>
         </div>
         <h2
           class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
         >
           Reservas
         </h2>
-        <ara-calendario></ara-calendario>
+
         <ara-lista-cliente></ara-lista-cliente>
         <h2
           class="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"

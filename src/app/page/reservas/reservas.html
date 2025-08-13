@@ -5,74 +5,125 @@
     font-family: 'Work Sans', 'Noto Sans', sans-serif;
   "
 >
-  <div class="layout-container flex h-full grow flex-col">
+  <div class="layout-container flex h-full grow">
     <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-      <div class="layout-content-container flex flex-col w-80">
-        <div
-          class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4"
-        >
+      <div class="layout-content-container flex flex-col w-50 h-dvh">
+        <div class="flex h-full flex-col justify-between bg-white p-4">
           <ara-sidenav></ara-sidenav>
         </div>
       </div>
-      <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-        <div class="flex flex-wrap justify-between gap-3 p-4">
-          <p
+      
+      <div class="flex flex-wrap items-start w-full">
+         <div class="flex flex-wrap justify-between gap-3 p-4">
+          <h2
             class="text-[#111418] tracking-light text-[32px] font-bold leading-tight min-w-72"
           >
-            New Reservation
-          </p>
+            Reservas
+          </h2>
         </div>
-        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-          <label class="flex flex-col min-w-40 flex-1">
-            <p class="text-[#111418] text-base font-medium leading-normal pb-2">
-              Guest
-            </p>
-            <select
-              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-white focus:border-[#dbe0e6] h-14 bg-[image:--select-button-svg] placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
-            >
-              <option value="one">Select a guest</option>
-              <option value="two">two</option>
-              <option value="three">three</option>
-            </select>
-          </label>
+        <div class="layout-content-container grid grid-cols-2 w-full">
+          <!-- Columna de Inputs -->
+          <div class="flex flex-col">
+            <!-- Huésped -->
+            <div class="flex flex-wrap items-end px-4 py-1">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111418] text-base font-bold pb-2">Huésped</p>
+                <input
+                  type="text"
+                  class="form-input h-14 border border-[#dbe0e6] rounded-lg p-[15px]"
+                  placeholder="Ingrese el nombre del huésped"
+                />
+              </label>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-1">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111418] text-base font-bold pb-2">Teléfono</p>
+                <input
+                  type="text"
+                  class="form-input h-14 border border-[#dbe0e6] rounded-lg p-[15px]"
+                  placeholder="Ingrese el teléfono"
+                />
+              </label>
+            </div>
+
+            <!-- CUIT -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-1">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111418] text-base font-bold pb-2">CUIT</p>
+                <input
+                  type="text"
+                  class="form-input h-14 border border-[#dbe0e6] rounded-lg p-[15px]"
+                  placeholder="Ingrese el CUIT"
+                />
+              </label>
+            </div>
+
+            <!-- Cantidad de Personas -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-1">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111418] text-base font-bold pb-2">
+                  Cantidad de Personas
+                </p>
+                <select
+                  class="form-input h-14 border border-[#dbe0e6] rounded-lg p-[15px]"
+                >
+                  @for (persona of cpersonas; track $index) {
+                  <option value="{{ persona.value }}">
+                    {{ persona.label }}
+                  </option>
+                  }
+                </select>
+              </label>
+            </div>
+
+            <!-- Departamento -->
+            <div class="flex flex-wrap items-end gap-4 px-4 py-1">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111418] text-base font-bold pb-2">
+                  Departamento
+                </p>
+                <select
+                  class="form-input h-14 border border-[#dbe0e6] rounded-lg p-[15px]"
+                >
+                  @for (depto of departamento; track $index) {
+                  <option value="{{ depto.value }}">{{ depto.label }}</option>
+                  }
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <!-- Columna del Calendario -->
+          <div>
+            <h3 class="text-[#111418] text-lg font-bold px-4 pb-2">
+              Selecciona Fechas
+            </h3>
+            <ara-calendario></ara-calendario>
+          </div>
         </div>
-        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-          <label class="flex flex-col min-w-40 flex-1">
-            <p class="text-[#111418] text-base font-medium leading-normal pb-2">
-              Room Type
-            </p>
-            <select
-              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-white focus:border-[#dbe0e6] h-14 bg-[image:--select-button-svg] placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
-            >
-              <option value="one">Select a room type</option>
-              <option value="two">two</option>
-              <option value="three">three</option>
-            </select>
-          </label>
-        </div>
-        <h3
-          class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+        <div
+          class="layout-content-container flex flex-col w-full justify-center"
         >
-          Select Dates
-        </h3>
-        <ara-calendario></ara-calendario>
-        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-          <label class="flex flex-col min-w-40 flex-1">
-            <p class="text-[#111418] text-base font-medium leading-normal pb-2">
-              Special Requests
-            </p>
-            <textarea
-              placeholder="Enter any special requests"
-              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-white focus:border-[#dbe0e6] min-h-36 placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
-            ></textarea>
-          </label>
-        </div>
-        <div class="flex px-4 py-3">
-          <button
-            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 flex-1 bg-[#0d80f2] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-          >
-            <span class="truncate">Create Reservation</span>
-          </button>
+          <div class="flex flex-wrap items-end gap-4 px-4 py-3">
+            <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#111418] text-base font-bold leading-normal pb-2">
+                Observaciones
+              </p>
+              <textarea
+                placeholder="Ingrese cualquier observación"
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dbe0e6] bg-white focus:border-[#dbe0e6] min-h-36 placeholder:text-[#60758a] p-[15px] text-base font-normal leading-normal"
+              ></textarea>
+            </label>
+          </div>
+          <div class="flex px-4 py-3 justify-center">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 flex-1 bg-[#0d80f2] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Reservar</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
